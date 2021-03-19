@@ -2,7 +2,7 @@
 
 namespace DoubleThreeDigital\SocialShots\Console\Commands;
 
-use DoubleThreeDigital\SocialShots\SocialImage;
+use DoubleThreeDigital\SocialShots\SocialShots;
 use Illuminate\Console\Command;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Entry;
@@ -23,7 +23,7 @@ class WarmSocialShotsCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Warm social images for all entries.';
+    protected $description = 'Warm Social Shots for all entries.';
 
     /**
      * Execute the console command.
@@ -34,35 +34,15 @@ class WarmSocialShotsCommand extends Command
     {
         Entry::all()
             ->each(function ($entry) {
-                $this->info("Generating for {$entry->slug()}");
+                $this->info("Generating for {$entry->slug()} [{$entry->id()}]");
 
-                // OG
-                $requestPath = $entry->slug();
-                $cacheKey = "og_social_image_{$requestPath}";
-
-                SocialImage::make(
-                    $cacheKey,
-                    $requestPath,
-                    'social_images.default',
-                    $entry->toAugmentedArray(),
-                    'og_'.$requestPath,
-                    1200,
-                    630
-                );
-
-                // Twitter
-                $requestPath = $entry->slug();
-                $cacheKey = "twitter_social_image_{$requestPath}";
-
-                return SocialImage::make(
-                    $cacheKey,
-                    $requestPath,
-                    'social_images.default',
-                    $entry->toAugmentedArray(),
-                    'twitter_'.$requestPath,
-                    600,
-                    335
-                );
+                foreach (SocialShots::$imageTypes as $imageType) {
+                    SocialShots::make(
+                        $imageType['prefix'],
+                        "socialShots::{$imageType['prefix']}::{$entry->slug()}",
+                        $entry->toAugmentedArray()
+                    );
+                }
             });
     }
 }

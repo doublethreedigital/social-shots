@@ -13,7 +13,7 @@ class SocialShotsTag extends Tags
     public function og()
     {
         $requestPath = $this->context->get('slug');
-        $cacheKey = "og_social_image_{$requestPath}";
+        $cacheKey = "socialShots::og::{$requestPath}";
 
         $this->handleCacheInvalidation($cacheKey);
 
@@ -23,7 +23,7 @@ class SocialShotsTag extends Tags
     public function twitter()
     {
         $requestPath = $this->context->get('slug');
-        $cacheKey = "twitter_social_image_{$requestPath}";
+        $cacheKey = "socialShots::twitter::{$requestPath}";
 
         $this->handleCacheInvalidation($cacheKey);
 

@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
 use Spatie\Browsershot\Browsershot;
-use Statamic\Entries\Collection;
 use Statamic\Facades\Parse;
 
 class SocialShots
@@ -15,7 +14,7 @@ class SocialShots
     // Cache length
     // Where to save images - maybe an asset container?
 
-    protected static array $imageTypes = [
+    public static array $imageTypes = [
         'og' => [
             'prefix'  => 'og',
             'width'   => 1200,
