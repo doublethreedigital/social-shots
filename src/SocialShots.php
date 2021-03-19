@@ -10,10 +10,6 @@ use Statamic\Facades\Parse;
 
 class SocialShots
 {
-    // TODO: Configurables
-    // Cache length
-    // Where to save images - maybe an asset container?
-
     public static array $imageTypes = [
         'og' => [
             'prefix'  => 'og',
@@ -29,7 +25,7 @@ class SocialShots
 
     public static function make(string $imageType, string $cacheKey, array $data)
     {
-        return Cache::remember($cacheKey, now()->addMinute(), function () use ($imageType, $data) {
+        return Cache::remember($cacheKey, now()->addMinutes(config('social-shots.cache_length')), function () use ($imageType, $data) {
             $viewPath  = static::findView($data);
             $imageType = static::$imageTypes[$imageType];
 
@@ -43,7 +39,7 @@ class SocialShots
 
     public static function generateImage(array $imageType, string $viewPath, array $data): string
     {
-        $savePath = 'assets/social-shots/' . $imageType['prefix'] . $data['slug'] . '.png';
+        $savePath = 'assets/social-shots/' . $imageType['prefix'] . '::' . $data['slug'] . '.png';
 
         $renderedView = (string) Parse::template(
             File::get($viewPath),

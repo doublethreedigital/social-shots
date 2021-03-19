@@ -32,10 +32,13 @@ class WarmSocialShotsCommand extends Command
      */
     public function handle()
     {
-        Entry::all()
-            ->each(function ($entry) {
-                $this->info("Generating for {$entry->slug()} [{$entry->id()}]");
+        $this->info('Generating Social Shots');
 
+        $bar = $this->output->createProgressBar(Entry::all()->count());
+        $bar->start();
+
+        Entry::all()
+            ->each(function ($entry) use ($bar) {
                 foreach (SocialShots::$imageTypes as $imageType) {
                     SocialShots::make(
                         $imageType['prefix'],
@@ -43,6 +46,10 @@ class WarmSocialShotsCommand extends Command
                         $entry->toAugmentedArray()
                     );
                 }
+
+                $bar->advance();
             });
+
+        $bar->finish();
     }
 }
