@@ -4,6 +4,7 @@ namespace DoubleThreeDigital\SocialShots;
 
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use Spatie\Browsershot\Browsershot;
 use Statamic\Facades\Parse;
@@ -39,18 +40,15 @@ class SocialShots
 
     public static function generateImage(array $imageType, string $viewPath, array $data): string
     {
-        $savePath = 'assets/social-shots/' . $imageType['prefix'] . '::' . $data['slug'] . '.png';
+        $fileName = "{$imageType['prefix']}__{$data['slug']}.png";
 
-        $renderedView = (string) Parse::template(
-            File::get($viewPath),
-            $data
-        );
+        $renderedView = (string) Parse::template(File::get($viewPath), $data);
 
         Browsershot::html($renderedView)
             ->windowSize($imageType['width'], $imageType['height'])
-            ->save(public_path($savePath));
+            ->save(Storage::disk(config('social-shots.filesystem_disk'))->path($fileName));
 
-        return asset($savePath);
+        return Storage::url($fileName);
     }
 
     protected static function findView(array $data): string
