@@ -2,6 +2,8 @@
 
 ## Social Shots
 
+**🚧 &#8201; This addon is still in beta, things may change/break while everything is worked out before a full v1 release.**
+
 Social Shots allows you to generate social sharing images dynamically. All you need is HTML, CSS & Antlers.
 
 This repository contains the source code of Social Shots. While Social Shots itself is free and doesn't require a license, you can [donate to Duncan](https://duncanm.dev/donate), the developer behind it to show your appreciation.
