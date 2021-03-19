@@ -1,6 +1,6 @@
 {
     "name": "doublethreedigital/social-shots",
-    "description": "Addon Boilerplate for Statamic v3",
+    "description": "Generate social images dynamically, from your Statamic entries.",
     "license": "proprietary",
     "autoload": {
         "psr-4": {
@@ -14,8 +14,8 @@
     },
     "extra": {
         "statamic": {
-            "name": "Addon Boilerplate",
-            "description": "Addon Boilerplate for Statamic v3"
+            "name": "Social Shots",
+            "description": "Generate social images dynamically, from your Statamic entries."
         },
         "laravel": {
             "providers": [
