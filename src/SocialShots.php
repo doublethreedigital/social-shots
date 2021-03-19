@@ -40,7 +40,9 @@ class SocialShots
 
     public static function generateImage(array $imageType, string $viewPath, array $data): string
     {
-        $fileName = "{$imageType['prefix']}__{$data['slug']}.png";
+        $fileName = isset($data['slug'])
+            ? "{$imageType['prefix']}__{$data['slug']}.png"
+            : "{$imageType['prefix']}__{$data['last_segment']}.png";
 
         $renderedView = (string) Parse::template(File::get($viewPath), $data);
 
