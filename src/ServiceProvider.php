@@ -7,10 +7,10 @@ use Statamic\Providers\AddonServiceProvider;
 class ServiceProvider extends AddonServiceProvider
 {
     protected $commands = [
-        Console\Commands\WarmSocialShots::class,
+        Console\Commands\WarmSocialShotsCommand::class,
     ];
 
     protected $tags = [
-        Tags\SocialImageTag::class,
+        Tags\SocialShotsTag::class,
     ];
 }

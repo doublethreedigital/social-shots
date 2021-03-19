@@ -47,6 +47,8 @@ return [
 ];
 ```
 
+### Usage in layout
+
 ### Templating
 
 access to cascade, limitations, view names

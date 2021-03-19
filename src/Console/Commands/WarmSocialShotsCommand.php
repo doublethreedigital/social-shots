@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Entry;
 
-class WarmSocialShots extends Command
+class WarmSocialShotsCommand extends Command
 {
     use RunsInPlease;
 
