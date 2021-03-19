@@ -2,14 +2,38 @@
 
 ## Social Shots
 
+**🚧  This addon is still fairly experimental but you're free to pull it in and give it a try.**
+
 Social Shots allows you to generate social sharing images dynamically. All you need is HTML, CSS & Antlers.
 
 This repository contains the source code of Social Shots. While Social Shots itself is free and doesn't require a license, you can [donate to Duncan](https://duncanm.dev/donate), the developer behind it to show your appreciation.
 
 ## Installation
 
+### Addon installation
+
 1. Install via Composer `composer require doublethreedigital/social-shots`
 2. Publish configuration, assets etc `php artisan vendor:publish --provider="DoubleThreeDigital\SocialShots\ServiceProvider"`
+
+### Puppeteer installation
+
+Under the hood, this addon uses something called [Puppeteer](https://github.com/GoogleChrome/puppeteer) (via [Browsershot](https://github.com/spatie/browsershot)), which provides an easy way to take screenshots via a headless version of Chrome.
+
+Because of this, you'll also need to install Puppeteer whereever you want to run this addon, in a local environment or on your server.
+
+We've provided some copy & paste snippets which should work for most environments. If these install steps don't work for you, please research setting up Puppeteer for your operating system.
+
+**macOS**
+
+```
+npm install puppeteer --global
+```
+
+**Ubuntu (works for Forge provisioned servers)**
+
+```
+npm install puppeteer --global
+```
 
 ## Documentation
 
