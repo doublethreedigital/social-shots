@@ -166,7 +166,6 @@ If you discover a security vulnerability within social-shots, please report it [
 ## Resources
 
 * [**Issue Tracker**](https://github.com/doublethreedigital/social-shots/issues): Find & report bugs in Social Shots
-* [**Discussions**](https://github.com/doublethreedigital/social-shots/discussions): Get help and put forward feature requests
 * [**Email**](mailto:hello@doublethree.digital): Support from the developer behind the addon
 
 ---
