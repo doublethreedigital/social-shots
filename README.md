@@ -1,4 +1,4 @@
-![Banner](https://raw.githubusercontent.com/doublethreedigital/social-shots/master/banner.png)
+![Banner](https://raw.githubusercontent.com/doublethreedigital/social-shots/main/banner.png)
 
 ## Social Shots
 
