@@ -6,7 +6,7 @@
 
 Social Shots allows you to generate social sharing images dynamically. All you need is HTML, CSS & Antlers.
 
-This repository contains the source code of Social Shots. While Social Shots itself is free and doesn't require a license, you can [donate to Duncan](https://duncanm.dev/donate), the developer behind it to show your appreciation.
+This repository contains the source code of Social Shots. While Social Shots itself is free and doesn't require a license, you can [donate to Duncan](https://duncanmcclean.com/donate), the developer behind it to show your appreciation.
 
 ## Installation
 
