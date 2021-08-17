@@ -1,6 +1,10 @@
+<!-- statamic:hide -->
+
 ![Banner](https://raw.githubusercontent.com/doublethreedigital/social-shots/main/banner.png)
 
 ## Social Shots
+
+<!-- /statamic:hide -->
 
 **🚧 &#8201; This addon is still in beta, things may change/break while everything is worked out before a full v1 release.**
 
@@ -154,19 +158,21 @@ protected function schedule(Schedule $schedule)
 You may also wish to invalidate the cache for a specific page. To do so, append the `purge_social_shot` query parameter to page URL.
 
 ```
-https://duncanm.dev/something?purge_social_shot=true
+https://duncanmcclean.com/something?purge_social_shot=true
 ```
 
 ## Security
 
 From a security perspective, only the latest version will receive a security release if a vulnerability is found.
 
-If you discover a security vulnerability within social-shots, please report it [via email](mailto:hello@doublethree.digital) straight away. Please don't report security issues in the issue tracker.
+If you discover a security vulnerability within social-shots, please report it [via email](mailto:help@doublethree.digital) straight away. Please don't report security issues in the issue tracker.
 
 ## Resources
 
 * [**Issue Tracker**](https://github.com/doublethreedigital/social-shots/issues): Find & report bugs in Social Shots
-* [**Email**](mailto:hello@doublethree.digital): Support from the developer behind the addon
+* [**Email**](mailto:help@doublethree.digital): Support from the developer behind the addon
+
+<!-- statamic:hide -->
 
 ---
 
@@ -174,3 +180,5 @@ If you discover a security vulnerability within social-shots, please report it [
 <a href="https://statamic.com"><img src="https://img.shields.io/badge/Statamic-3.0+-FF269E?style=for-the-badge" alt="Compatible with Statamic v3"></a>
 <a href="https://packagist.org/packages/doublethreedigital/social-shots/stats"><img src="https://img.shields.io/packagist/v/doublethreedigital/social-shots?style=for-the-badge" alt="Social Shots on Packagist"></a>
 </p>
+
+<!-- /statamic:hide -->
