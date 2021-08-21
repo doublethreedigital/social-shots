@@ -32,6 +32,9 @@ class WarmSocialShotsCommand extends Command
      */
     public function handle()
     {
+        return $this->error("Generating social images via the 'warm' command is not currently supported. It will be soon, however.");
+
+
         $this->info('Generating Social Shots');
 
         $bar = $this->output->createProgressBar(Entry::all()->count());

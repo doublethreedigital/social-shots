@@ -2,7 +2,7 @@
 
 namespace DoubleThreeDigital\SocialShots\Exceptions;
 
-class NoSocialShotViewFound extends \Exception
+class SocialShotViewNotFound extends \Exception
 {
     //
 }

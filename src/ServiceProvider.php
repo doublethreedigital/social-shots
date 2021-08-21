@@ -2,6 +2,7 @@
 
 namespace DoubleThreeDigital\SocialShots;
 
+use Statamic\Events\EntrySaved;
 use Statamic\Providers\AddonServiceProvider;
 
 class ServiceProvider extends AddonServiceProvider
@@ -10,7 +11,9 @@ class ServiceProvider extends AddonServiceProvider
         Console\Commands\WarmSocialShotsCommand::class,
     ];
 
-    protected $tags = [
-        Tags\SocialShotsTag::class,
+    protected $listen = [
+        EntrySaved::class => [
+            Listeners\EntrySocialShots::class,
+        ],
     ];
 }
